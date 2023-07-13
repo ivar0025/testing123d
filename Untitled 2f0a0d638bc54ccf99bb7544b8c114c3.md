@@ -1,10 +1,9 @@
-# Untitled
+# TESTING  #
 
 ## TASK1:   **NETWORK BANDWIDTH**
 
-<aside>
-🦄 **NETWORK BANDWIDTH**
-
+<aside> 
+    
 ### LINK
 
 | TOPIC | LINK |
@@ -13,18 +12,18 @@
 |  | https://linuxhint.com/iperf_command_usage/ |
 |  |  |
 
+
+---
+
+
 ### COMMAND
 
-|  |  |
-| --- | --- |
-|  |  |
-|  |  |
+
 - **iperf command**
     
-    <aside>
-    🦄 ss
-    
-    To perform network bandwidth checks using iperf, you can use various command options depending on your requirements. Here are some commonly used iperf commands:
+  
+    🦄
+   To perform network bandwidth checks using iperf, you can use various command options depending on your requirements. Here are some commonly used iperf commands:
     
     1. Server Mode:
         - To start the iperf server, listening on a specific port (default is 5201):
@@ -78,13 +77,10 @@
             ```
             iperf -c <server_ip/hostname> -P <num_connections>
             ```
-            
     
-    These are just a few examples of the many options available in iperf. You can explore more options and customization by referring to the iperf documentation or running `iperf --help` for a complete list of available options.
     
-    </aside>
     
-
+---
 ### NOTES :
 
 <aside>
@@ -92,32 +88,35 @@
 
 - the [iPerf](https://iperf.fr/) tool to measure network performance and bandwidth
 - **it works in a client-server model and supports UDP and TCP**.
-- ****Installing *iPerf* on Client and Server
-`sudo apt install iperf`**
+- **Installing iperf on Client and Server**  
+`sudo apt install iperf`
 
 ---
 
-iperf -c 5.182.18.49 -i 5 -t 15 -w 416K -p 5003
+`iperf -c 5.182.18.49 -i 5 -t 15 -w 416K -p 5003`
 
-- *i* specifies the interval time in seconds. 10 is the default
-*t* specifies the time to run the test in seconds
-*p* specifies the port. 5001 is the default
-*w* specifies the TCP window size. 85 KB is the default
+**i** specifies the interval time in seconds. 10 is the default  
+**t** specifies the time to run the test in seconds  
+**p** specifies the port. 5001 is the default  
+**w** specifies the TCP window size. 85 KB is the default  
 
 ---
 
-**How do you install iPerf?**
+🍁  **How do you install iPerf?** 
+
 CentOS / Red Hat Linux operating systems
-Run the following command on the command line:
+Run the following command on the command line: 
+
 `yum install iperf`
 
 Debian / Ubuntu Linux operating systems
 Run the following commands on the command line:
-`apt-get update
-apt-get -y install iperf`
 
-===========
-How do you use iPerf?
+`apt-get update
+apt-get -y install `
+
+
+🍁 **How do you use iPerf?**
 
 **On the server side, run the following command:**
 
@@ -129,35 +128,38 @@ The following information is an example of the command and its output on the cli
 
 ============
 
-**To Test The Link For 20 Seconds And Look At The Results Every 2 Seconds, You Can Change The Commands On The Client Side And The Server Side As Follows:**
+🍁 **To Test The Link For 20 Seconds And Look At The Results Every 2 Seconds, You Can Change The Commands On The Client Side And The Server Side As Follows:**
 
-server :
+**server :**  
 `iperf -s -p 8000 -i 2`
 
-Client side:
+**Client side:**  
 
 `iperf -c 10.10.10.5 -p 8000 -t 20 -i 2`
 
-================
-How do you change the TCP Port (-p 8000)?
+
+🍁 **How do you change the TCP Port (-p 8000)?**
 
 **Server Side:**  
 `iperf -s -w 1024k -i 2 -p 8000`
 
-**Client Side:**
+**Client Side:**  
 `iperf -i 2 -t 20 -c 10.10.10.5 -p 8000 -w 1024k`
 
 ---
 
 </aside>
 
-### PRACTICAL :
+
+
+### 🍁 PRACTICAL :
 
 <aside>
 🦄
 
-```nasm
-ravi@server:~$ **iperf -s -p 8000 i2**
+```
+
+ravi@server:~$ iperf -s -p 8000 i2
 iperf: ignoring extra argument -- i2
 ------------------------------------------------------------
 Server listening on TCP port 8000
@@ -167,8 +169,8 @@ TCP window size:  128 KByte (default)
 [ ID] Interval       Transfer     Bandwidth
 [  4]  0.0-20.0 sec  22.2 GBytes  9.51 Gbits/sec
 
-=====**************===============
-ravi@client1:~$ **iperf -c 192.168.122.29 -p 8000 -t 20 -i 2**
+====================
+ravi@client1:~$ iperf -c 192.168.122.29 -p 8000 -t 20 -i 2
 ------------------------------------------------------------
 Client connecting to 192.168.122.29, TCP port 8000
 TCP window size: 1.78 MByte (default)
@@ -179,7 +181,7 @@ TCP window size: 1.78 MByte (default)
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**ravi@server:~$ iperf -s -w 1024k -i 2**
+ravi@server:~$ iperf -s -w 1024k -i 2
 ------------------------------------------------------------
 Server listening on TCP port 5001
 TCP window size:  416 KByte (WARNING: requested 1000 KByte)
@@ -188,7 +190,7 @@ TCP window size:  416 KByte (WARNING: requested 1000 KByte)
 [ ID] Interval       Transfer     Bandwidth
 [  4]  0.0- 2.0 sec   267 MBytes  1.12 Gbits/sec
 
-**iperf -i 2 -t 20 -c 192.168.122.29 -w 1024k**
+iperf -i 2 -t 20 -c 192.168.122.29 -w 1024k
 ------------------------------------------------------------
 Client connecting to 192.168.122.29, TCP port 5001
 TCP window size:  416 KByte (WARNING: requested 1000 KByte)
@@ -197,7 +199,8 @@ TCP window size:  416 KByte (WARNING: requested 1000 KByte)
 [ ID] Interval       Transfer     Bandwidth
 [  3]  0.0- 2.0 sec   265 MBytes  1.11 Gbits/sec
 
-----
+
+
 ```
 
 </aside>
