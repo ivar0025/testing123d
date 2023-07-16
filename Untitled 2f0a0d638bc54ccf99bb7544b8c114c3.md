@@ -158,7 +158,25 @@ The following information is an example of the command and its output on the cli
 🦄
 
 ```
+ravi@server:~$ iperf -s 
+------------------------------------------------------------
+Server listening on TCP port 5001
+TCP window size:  128 KByte (default)
+------------------------------------------------------------
+[  4] local 192.168.122.29 port 5001 connected with 192.168.122.109 port 39926
+[ ID] Interval       Transfer     Bandwidth
+[  4]  0.0-10.0 sec  9.70 GBytes  8.34 Gbits/sec
 
+ravi@client1:~$ iperf -c 192.168.122.29 
+------------------------------------------------------------
+Client connecting to 192.168.122.29, TCP port 5001
+TCP window size:  280 KByte (default)
+------------------------------------------------------------
+[  3] local 192.168.122.109 port 39926 connected with 192.168.122.29 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-10.0 sec  9.70 GBytes  8.33 Gbits/sec
+
+========================================
 ravi@server:~$ iperf -s -p 8000 i2
 iperf: ignoring extra argument -- i2
 ------------------------------------------------------------
@@ -169,7 +187,7 @@ TCP window size:  128 KByte (default)
 [ ID] Interval       Transfer     Bandwidth
 [  4]  0.0-20.0 sec  22.2 GBytes  9.51 Gbits/sec
 
-====================
+
 ravi@client1:~$ iperf -c 192.168.122.29 -p 8000 -t 20 -i 2
 ------------------------------------------------------------
 Client connecting to 192.168.122.29, TCP port 8000
